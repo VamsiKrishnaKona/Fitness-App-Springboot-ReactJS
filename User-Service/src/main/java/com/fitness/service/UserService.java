@@ -6,10 +6,12 @@ import com.fitness.DTOs.UserResponse;
 import com.fitness.model.User;
 import com.fitness.repository.UserRepository;
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@Slf4j
 public class UserService
 {
 
@@ -51,5 +53,11 @@ public class UserService
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
         return mapper.toResponse(user);
+    }
+
+    public Boolean existsByUserId(String userId)
+    {
+        log.info("Calling User Validation API for userId: {}", userId);
+        return userRepository.existsById(userId);
     }
 }

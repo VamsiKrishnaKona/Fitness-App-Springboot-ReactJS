@@ -1,5 +1,12 @@
 server:
-  port: 21001
+  port: 21002
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:21000/eureka
+    register-with-eureka: true
+    fetch-registry: true
 
 spring:
   application:
@@ -8,4 +15,6 @@ spring:
     mongodb:
       uri: mongodb://localhost:27017/ActivityDB
       database: ActivityDB
+
+
 

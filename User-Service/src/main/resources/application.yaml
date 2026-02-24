@@ -1,5 +1,5 @@
 server:
-  port: 21000
+  port: 21001
 
 spring:
   datasource:
@@ -13,4 +13,11 @@ spring:
       ddl-auto: update
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:21000/eureka
+    register-with-eureka: true
+    fetch-registry: true
 
