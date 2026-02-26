@@ -1,5 +1,5 @@
 server:
-  port: 21002
+  port: 21003
 
 eureka:
   client:
@@ -13,10 +13,11 @@ eureka:
 
 spring:
   application:
-    name: Activity-Service
+    name: AI-Service
   data:
     mongodb:
-      uri: mongodb://localhost:27017/ActivityDB
+      uri: mongodb://localhost:27017/fitnessRecommendationDB
+      database: fitnessRecommendationDB
   rabbitmq:
     host: localhost
     port: 5672
@@ -30,7 +31,3 @@ rabbitmq:
     name: activity.queue
   routing:
     key: activity.tracking
-
-services:
-  user-service:
-    base-url: http://localhost:21001

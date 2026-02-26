@@ -20,4 +20,7 @@ eureka:
       defaultZone: http://localhost:21000/eureka
     register-with-eureka: true
     fetch-registry: true
+  instance:
+    hostname: localhost
+    instance-id: ${eureka.instance.hostname}:${spring.application.name}:${server.port}
 
